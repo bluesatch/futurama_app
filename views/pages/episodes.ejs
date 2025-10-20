@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <h2>All the Episodes that you need to watch. The rest are meh...</h2>
+    <section class="section" id="section">
+        <% episodes.forEach(episode => { %>
+            <div>
+                <h3>
+                    <a href="/episodes/<%=episode.id %>">
+                        <%= episode.title %></h3>
+                    </a>
+                <ul>
+                    <li>Season - Episode: <%= episode.number %></li>
+                    <li>Writers (let's hope they got paid...): <%= episode.writers %></li>
+                    <li>Orignal Air Date: <%= episode.originalAirDate %></li>
+                </ul>
+                <p>Description: <%= episode.desc %></p>
+            </div>
+        <% }) %>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>

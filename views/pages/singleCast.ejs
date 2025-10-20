@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <h2><%= data.name %> has a face only a mother could love. That's why we don't have their image here...</h2>
+    <ul>
+        <li>Born: <%= data.born %></li>
+        <li><% if (data.died == '') { %>
+                Still living
+            <% }  else { %>
+                Died: <%= data.died %>
+            <% } %>
+        </li>
+        <li>For more info, check their <a href="<%= data.bio.url %>">imdb profile</a></li>
+    </ul>
+</main>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,18 @@
+<% include('../partials/header') %>
+
+<main class="main" id="main">
+    <h2>Test Your Futurama Knowledge</h2>
+
+    <div>
+        <h3><%= question.question %></h3>
+        <% question.possibleAnswers.forEach(answer => { %>
+
+            <div>
+                <%= answer %>
+            </div>
+        
+        <%}) %>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

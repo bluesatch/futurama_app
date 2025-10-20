@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <% cast.forEach(castMember => { %>
+        <h2>
+            <a href="/cast/<%= castMember.id %>">
+                <%= castMember.name %>
+            </a>
+        </h2>
+        <a href="<%= castMember.bio.url %>">Click here for profile</a>
+    <% }) %>
+</main>
+
+<%- include('../partials/footer') %>
