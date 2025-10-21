@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { displayChoices, handleClick }  = require('../../helpers/quiz')
 
 const fetch =(...args)=> import('node-fetch').then(({ default: fetch})=> fetch(...args))
 
@@ -13,27 +14,15 @@ router.get('/', (req, res)=> {
             
             let question = {}
 
-            const getQuestion =()=> {
-
-                if (data.length == 0) {
-                    return
-                } else {
-                    let num = Math.floor(Math.random() * data.length)
-
-                    question = data.splice(num, 1)[0]
-                }
-
-                console.log(question)
-                return question
-            }
-
-            getQuestion()
+            question = displayChoices(data)
+            console.log(question)
 
             res.render('pages/questions', {
                 title: 'Futurama Quiz',
                 name: 'Futurama Quiz',
                 question,
-                data
+                data,
+                handleClick
             })
         })
 })

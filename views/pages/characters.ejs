@@ -1,19 +1,23 @@
 <%- include('../partials/header'); %>
 
 <main class="main" id="main">
-    <h2>Characters</h2>
-    <% data.forEach(item => { %>
-        <div>
-            <figure>
-                <img src="<%= item.images.main%>" alt="image of <%= item.name.first%>">
-                <figcaption>
-                    <a href="/characters/<%= item.id %>">
-                        <%= item.name.first %> <%= item.name.last %>
-                    </a>
-                </figcaption>
-            </figure>
+    <div class="container">
+        <h2>Characters</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% data.forEach(item => { %>
+                <div class="col">
+                    <figure>
+                        <img src="<%= item.images.main%>" alt="image of <%= item.name.first%>">
+                        <figcaption>
+                            <a href="/characters/<%= item.id %>">
+                                <%= item.name.first %> <%= item.name.last %>
+                            </a>
+                        </figcaption>
+                    </figure>
+                </div>
+            <% }) %>
         </div>
-    <% }) %>
+    </div>
 </main>
 
 <%- include('../partials/footer'); %>

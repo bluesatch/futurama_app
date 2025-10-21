@@ -1,14 +1,23 @@
 <%- include('../partials/header') %>
 
 <main class="main" id="main">
-    <% cast.forEach(castMember => { %>
-        <h2>
-            <a href="/cast/<%= castMember.id %>">
-                <%= castMember.name %>
-            </a>
-        </h2>
-        <a href="<%= castMember.bio.url %>">Click here for profile</a>
-    <% }) %>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% cast.forEach(castMember => { %>
+                <div class="col">
+                    <div class="cast-div">
+                        <h2>
+                            <a href="/cast/<%= castMember.id %>">
+                                <%= castMember.name %>
+                            </a>
+                        </h2>
+                        <a href="<%= castMember.bio.url %>">Click here for profile</a>
+                    </div>
+                </div>
+            <% }) %>
+
+        </div>
+    </div>
 </main>
 
 <%- include('../partials/footer') %>
